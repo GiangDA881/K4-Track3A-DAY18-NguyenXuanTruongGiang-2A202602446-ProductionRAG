@@ -1,0 +1,32 @@
+{
+  "build_s": {
+    "chunking_s": 0.05,
+    "enrichment_s": 65.57,
+    "indexing_s": 5.45,
+    "reranker_load_s": 0.07
+  },
+  "per_query": {
+    "hybrid_search_ms": {
+      "avg_ms": 6.8,
+      "p95_ms": 11.6,
+      "max_ms": 13.3
+    },
+    "rerank_ms": {
+      "avg_ms": 1.5,
+      "p95_ms": 2.2,
+      "max_ms": 2.4
+    },
+    "generation_ms": {
+      "avg_ms": 3811.2,
+      "p95_ms": 7810.6,
+      "max_ms": 8066.9
+    },
+    "total_ms": {
+      "avg_ms": 3819.6,
+      "p95_ms": 7817.5,
+      "max_ms": 8080.1
+    }
+  },
+  "ragas_eval_s": 20556.6,
+  "num_queries": 20
+}

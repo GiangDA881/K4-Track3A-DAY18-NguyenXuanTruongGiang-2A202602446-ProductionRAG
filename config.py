@@ -3,10 +3,18 @@
 import os
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv(override=True)
 
-# --- API Keys ---
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
+OPENAI_BASE_URL = os.getenv("OPENAI_BASE_URL", "")
+
+if not OPENAI_API_KEY:
+    os.environ.pop("OPENAI_API_KEY", None)
+    os.environ.pop("OPENAI_BASE_URL", None)
+else:
+    os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
+    if OPENAI_BASE_URL:
+        os.environ["OPENAI_BASE_URL"] = OPENAI_BASE_URL
 
 # --- LLM (generation, enrichment, RAGAS judge) ---
 LLM_MODEL = os.getenv("LLM_MODEL", "gpt-4o-mini")
