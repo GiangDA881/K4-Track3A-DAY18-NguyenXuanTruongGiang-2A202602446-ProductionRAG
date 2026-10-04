@@ -8,6 +8,11 @@ load_dotenv()
 # --- API Keys ---
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 
+# --- LLM (generation, enrichment, RAGAS judge) ---
+LLM_MODEL = os.getenv("LLM_MODEL", "gpt-4o-mini")
+JUDGE_EMBEDDING_MODEL = os.getenv("JUDGE_EMBEDDING_MODEL", "text-embedding-3-small")
+ENRICH_WORKERS = int(os.getenv("ENRICH_WORKERS", "8"))
+
 # --- Qdrant ---
 QDRANT_HOST = "localhost"
 QDRANT_PORT = 6333
